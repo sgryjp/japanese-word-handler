@@ -6,6 +6,7 @@ export function run(): Promise<void> {
     return new Promise((c, e) => {
         mocha.setup({
             ui: 'tdd',
+            timeout: 10000,
             reporter: undefined
         });
 
