@@ -1,168 +1,168 @@
 {
-    "name": "japanese-word-handler",
-    "displayName": "Japanese Word Handler",
-    "description": "Better Japanese word handling on cursor movement",
-    "version": "1.4.1",
-    "publisher": "sgryjp",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/sgryjp/japanese-word-handler.git"
+  "name": "japanese-word-handler",
+  "displayName": "Japanese Word Handler",
+  "description": "Better Japanese word handling on cursor movement",
+  "version": "1.4.1",
+  "publisher": "sgryjp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgryjp/japanese-word-handler.git"
+  },
+  "engines": {
+    "vscode": "^1.61.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
     },
-    "engines": {
-        "vscode": "^1.61.0"
+    "virtualWorkspaces": true
+  },
+  "license": "Zlib",
+  "badges": [
+    {
+      "url": "https://vsmarketplacebadge.apphb.com/rating-short/sgryjp.japanese-word-handler.svg",
+      "href": "https://marketplace.visualstudio.com/items?itemName=sgryjp.japanese-word-handler",
+      "description": "Rating (VS Marketplace)"
     },
-    "categories": [
-        "Other"
-    ],
-    "extensionKind": [
-        "ui",
-        "workspace"
-    ],
-    "capabilities": {
-        "untrustedWorkspaces": {
-            "supported": true
-        },
-        "virtualWorkspaces": true
+    {
+      "url": "https://vsmarketplacebadge.apphb.com/installs-short/sgryjp.japanese-word-handler.svg",
+      "href": "https://marketplace.visualstudio.com/items?itemName=sgryjp.japanese-word-handler",
+      "description": "Number of installations (VS Marketplace)"
     },
-    "license": "Zlib",
-    "badges": [
-        {
-            "url": "https://vsmarketplacebadge.apphb.com/rating-short/sgryjp.japanese-word-handler.svg",
-            "href": "https://marketplace.visualstudio.com/items?itemName=sgryjp.japanese-word-handler",
-            "description": "Rating (VS Marketplace)"
-        },
-        {
-            "url": "https://vsmarketplacebadge.apphb.com/installs-short/sgryjp.japanese-word-handler.svg",
-            "href": "https://marketplace.visualstudio.com/items?itemName=sgryjp.japanese-word-handler",
-            "description": "Number of installations (VS Marketplace)"
-        },
-        {
-            "url": "https://github.com/sgryjp/japanese-word-handler/actions/workflows/ci.yml/badge.svg",
-            "href": "https://github.com/sgryjp/japanese-word-handler/actions/workflows/ci.yml",
-            "description": "CI status"
-        },
-        {
-            "url": "https://img.shields.io/badge/license-zlib-lightgrey.svg?longCache=true&style=popout",
-            "href": "https://github.com/sgryjp/japanese-word-handler/blob/master/LICENSE",
-            "description": "zlib License"
-        }
-    ],
-    "activationEvents": [
-        "onCommand:japaneseWordHandler.cursorWordEndLeft",
-        "onCommand:japaneseWordHandler.cursorWordEndLeftSelect",
-        "onCommand:japaneseWordHandler.cursorWordEndRight",
-        "onCommand:japaneseWordHandler.cursorWordEndRightSelect",
-        "onCommand:japaneseWordHandler.cursorWordStartLeft",
-        "onCommand:japaneseWordHandler.cursorWordStartLeftSelect",
-        "onCommand:japaneseWordHandler.cursorWordStartRight",
-        "onCommand:japaneseWordHandler.cursorWordStartRightSelect",
-        "onCommand:japaneseWordHandler.deleteWordEndLeft",
-        "onCommand:japaneseWordHandler.deleteWordEndRight",
-        "onCommand:japaneseWordHandler.deleteWordStartLeft",
-        "onCommand:japaneseWordHandler.deleteWordStartRight",
-        "onCommand:extension.cursorNextWordEndJa",
-        "onCommand:extension.cursorNextWordEndSelectJa",
-        "onCommand:extension.cursorPrevWordStartJa",
-        "onCommand:extension.cursorPrevWordStartSelectJa",
-        "onCommand:extension.deleteWordEndRight",
-        "onCommand:extension.deleteWordStartLeft"
-    ],
-    "main": "./dist/web/extension.js",
-    "browser": "./dist/web/extension.js",
-    "contributes": {
-        "keybindings": [
-            {
-                "command": "japaneseWordHandler.cursorWordEndLeft",
-                "key": "ctrl+alt+shift+9",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.cursorWordEndLeftSelect",
-                "key": "ctrl+alt+shift+9",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.cursorWordEndRight",
-                "key": "ctrl+right",
-                "mac": "alt+right",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.cursorWordEndRightSelect",
-                "key": "ctrl+shift+right",
-                "mac": "alt+shift+right",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.cursorWordStartLeft",
-                "key": "ctrl+left",
-                "mac": "alt+left",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.cursorWordStartLeftSelect",
-                "key": "ctrl+shift+left",
-                "mac": "alt+shift+left",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.cursorWordStartRight",
-                "key": "ctrl+alt+shift+9",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.cursorWordStartRightSelect",
-                "key": "ctrl+alt+shift+9",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "japaneseWordHandler.deleteWordEndLeft",
-                "key": "ctrl+alt+shift+9",
-                "when": "editorTextFocus && !editorReadonly"
-            },
-            {
-                "command": "japaneseWordHandler.deleteWordEndRight",
-                "key": "ctrl+delete",
-                "mac": "alt+delete",
-                "when": "editorTextFocus && !editorReadonly"
-            },
-            {
-                "command": "japaneseWordHandler.deleteWordStartLeft",
-                "key": "ctrl+backspace",
-                "mac": "alt+backspace",
-                "when": "editorTextFocus && !editorReadonly"
-            },
-            {
-                "command": "japaneseWordHandler.deleteWordStartRight",
-                "key": "ctrl+alt+shift+9",
-                "when": "editorTextFocus && !editorReadonly"
-            }
-        ]
+    {
+      "url": "https://github.com/sgryjp/japanese-word-handler/actions/workflows/ci.yml/badge.svg",
+      "href": "https://github.com/sgryjp/japanese-word-handler/actions/workflows/ci.yml",
+      "description": "CI status"
     },
-    "scripts": {
-        "compile-web": "webpack",
-        "lint": "eslint src --ext ts",
-        "package-web": "webpack --mode production --devtool hidden-source-map",
-        "pretest": "npm run compile-web && npm run lint",
-        "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
-        "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
-        "vscode:prepublish": "npm run package-web",
-        "watch-web": "webpack --watch"
-    },
-    "devDependencies": {
-        "@types/mocha": "^9.0.0",
-        "@types/vscode": "^1.61.0",
-        "@types/webpack-env": "^1.16.2",
-        "@typescript-eslint/eslint-plugin": "^5.1.0",
-        "@typescript-eslint/parser": "^5.1.0",
-        "@vscode/test-web": "^0.0.56",
-        "assert": "^2.0.0",
-        "eslint": "^8.1.0",
-        "mocha": "^9.1.3",
-        "process": "^0.11.10",
-        "ts-loader": "^9.2.5",
-        "typescript": "^4.4.4",
-        "webpack": "^5.95.0",
-        "webpack-cli": "^4.8.0"
+    {
+      "url": "https://img.shields.io/badge/license-zlib-lightgrey.svg?longCache=true&style=popout",
+      "href": "https://github.com/sgryjp/japanese-word-handler/blob/master/LICENSE",
+      "description": "zlib License"
     }
+  ],
+  "activationEvents": [
+    "onCommand:japaneseWordHandler.cursorWordEndLeft",
+    "onCommand:japaneseWordHandler.cursorWordEndLeftSelect",
+    "onCommand:japaneseWordHandler.cursorWordEndRight",
+    "onCommand:japaneseWordHandler.cursorWordEndRightSelect",
+    "onCommand:japaneseWordHandler.cursorWordStartLeft",
+    "onCommand:japaneseWordHandler.cursorWordStartLeftSelect",
+    "onCommand:japaneseWordHandler.cursorWordStartRight",
+    "onCommand:japaneseWordHandler.cursorWordStartRightSelect",
+    "onCommand:japaneseWordHandler.deleteWordEndLeft",
+    "onCommand:japaneseWordHandler.deleteWordEndRight",
+    "onCommand:japaneseWordHandler.deleteWordStartLeft",
+    "onCommand:japaneseWordHandler.deleteWordStartRight",
+    "onCommand:extension.cursorNextWordEndJa",
+    "onCommand:extension.cursorNextWordEndSelectJa",
+    "onCommand:extension.cursorPrevWordStartJa",
+    "onCommand:extension.cursorPrevWordStartSelectJa",
+    "onCommand:extension.deleteWordEndRight",
+    "onCommand:extension.deleteWordStartLeft"
+  ],
+  "main": "./dist/web/extension.js",
+  "browser": "./dist/web/extension.js",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "japaneseWordHandler.cursorWordEndLeft",
+        "key": "ctrl+alt+shift+9",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.cursorWordEndLeftSelect",
+        "key": "ctrl+alt+shift+9",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.cursorWordEndRight",
+        "key": "ctrl+right",
+        "mac": "alt+right",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.cursorWordEndRightSelect",
+        "key": "ctrl+shift+right",
+        "mac": "alt+shift+right",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.cursorWordStartLeft",
+        "key": "ctrl+left",
+        "mac": "alt+left",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.cursorWordStartLeftSelect",
+        "key": "ctrl+shift+left",
+        "mac": "alt+shift+left",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.cursorWordStartRight",
+        "key": "ctrl+alt+shift+9",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.cursorWordStartRightSelect",
+        "key": "ctrl+alt+shift+9",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "japaneseWordHandler.deleteWordEndLeft",
+        "key": "ctrl+alt+shift+9",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "japaneseWordHandler.deleteWordEndRight",
+        "key": "ctrl+delete",
+        "mac": "alt+delete",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "japaneseWordHandler.deleteWordStartLeft",
+        "key": "ctrl+backspace",
+        "mac": "alt+backspace",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "japaneseWordHandler.deleteWordStartRight",
+        "key": "ctrl+alt+shift+9",
+        "when": "editorTextFocus && !editorReadonly"
+      }
+    ]
+  },
+  "scripts": {
+    "compile-web": "webpack",
+    "lint": "eslint src --ext ts",
+    "package-web": "webpack --mode production --devtool hidden-source-map",
+    "pretest": "npm run compile-web && npm run lint",
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
+    "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
+    "vscode:prepublish": "npm run package-web",
+    "watch-web": "webpack --watch"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.0.0",
+    "@types/vscode": "^1.61.0",
+    "@types/webpack-env": "^1.16.2",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "@vscode/test-web": "^0.0.56",
+    "assert": "^2.0.0",
+    "eslint": "^8.1.0",
+    "mocha": "^9.1.3",
+    "process": "^0.11.10",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.4",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^4.8.0"
+  }
 }
