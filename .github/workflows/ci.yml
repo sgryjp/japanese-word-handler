@@ -11,32 +11,48 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        node-version: ["16", "latest"]
+        node-version: ["20", "latest"]
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js (${{ matrix.node-version }})
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run test
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: latest
+          run_install: true
+
+      - run: pnpm exec playwright install
+
+      - run: pnpm install-test
 
   package:
     runs-on: windows-latest
     needs: test
     strategy:
       matrix:
-        node-version: ["16"]
+        node-version: ["20"]
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js (${{ matrix.node-version }})
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: latest
+          run_install: true
+
       - run: npm install --global vsce
       - run: vsce package
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: "VSIX file"
           path: |
