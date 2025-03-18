@@ -26,6 +26,8 @@ jobs:
           version: latest
           run_install: true
 
+      - run: pnpm exec playwright install
+
       - run: pnpm install-test
 
   package:
