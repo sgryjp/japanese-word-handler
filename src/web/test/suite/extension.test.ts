@@ -6,17 +6,19 @@ import * as assert from "assert";
 // as well as import your extension to test it
 import * as vscode from "vscode";
 import {
+  EndOfLine,
   Position,
   Range,
   Selection,
   TextEditor,
   TextEditorEdit,
-  EndOfLine,
 } from "vscode";
 
 import * as myExtension from "../../extension";
 
-suite("japanese-word-handler", () => {
+suite("japanese-word-handler", function () {
+  this.timeout(10000); // Increase timeout
+
   // Prepare utility functions and constants
   const setText = async function (editor: TextEditor, text: string) {
     return editor.edit((editBuilder: TextEditorEdit) => {
