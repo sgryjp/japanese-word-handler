@@ -9,16 +9,13 @@ on:
 jobs:
   test:
     runs-on: windows-latest
-    strategy:
-      matrix:
-        node-version: ["20", "latest"]
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.js (${{ matrix.node-version }})
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "lts/*"
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -33,16 +30,13 @@ jobs:
   package:
     runs-on: windows-latest
     needs: test
-    strategy:
-      matrix:
-        node-version: ["20"]
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.js (${{ matrix.node-version }})
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "lts/*"
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -50,7 +44,7 @@ jobs:
           version: latest
           run_install: true
 
-      - run: npm install --global vsce
+      - run: npm install --global @vscode/vsce
       - run: vsce package
       - uses: actions/upload-artifact@v4
         with:
